@@ -48,7 +48,7 @@ def test_first_page2(client):
     #Checks template generation and ranking system after TestFile addition
     rv = client.get('/')
     assert b'Welcome to the voting application!' in rv.data
-    assert b'Rank:0 Name:TestFile' in rv.data
+    assert b'Rank:0 </b> Name:TestFile' in rv.data
 
 def test_file_deletion(client):
     #Checks file deletion
