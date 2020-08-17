@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head> Lets Vote! </head>
+<body> 
+<h1> Best pic is: </h1>
+<form method="POST" action="/vote">
+<div class="form_group">
+<input type="text" name="file_id">
+</div>
+<input class="btn btn-primary" type="submit" value="submit">
+</form>
+{% for item in current_list %}
+    ID: {{ item.id }} {{ item.Description}} <br>
+{% endfor %}
+
+</body> 
+</html>

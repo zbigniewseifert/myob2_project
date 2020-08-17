@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>{{ title }} Cat App</title>
+    </head>
+    <body>
+        <h1>Welcome to the voting application!</h1>
+        <h2><Here you can upload and vote for your favorite pictures!</h2>
+        <a href="/vote">VOTE!</a><br>
+        <a href="/del">del</a><br>
+        <a href="/upload">upload</a>
+        <br><br>
+        <form method="POST" action="" enctype="multipart/form-data">
+        </form>
+        <h5>
+        {% for file in files_data %}
+            <a href="/{{file.filepath}}/{{file.filename}}"><img src="{{ url_for(file.filepath, filename=file.filename) }}" style="width: 300px" ></a>
+            <h4><b>Rank:{{ file.file_rank }} </b> Name:{{ file.description }} ID:{{file.file_id}}</h5>
+        {% endfor %}
+  </body>
+    </body>
+</html>
