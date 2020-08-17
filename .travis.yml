@@ -1,4 +1,4 @@
 language: python
-before_install: cd myob2
+before_install: cd myob2;mkdir db upload_files;
 
 script: pytest
