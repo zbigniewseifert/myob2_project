@@ -1,6 +1,7 @@
 FROM ubuntu:latest
 
-MAINTAINER Zbigniew Seifert "z.seifert@gmail.com"
+#MAINTAINER Zbigniew Seifert "z.seifert@gmail.com"
+LABEL author="Zbigniew Seifert"
 
 RUN apt-get update -y && \
     apt-get install -y python3-pip python3-dev sqlite3
