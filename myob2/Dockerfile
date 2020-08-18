@@ -4,7 +4,7 @@ FROM ubuntu:latest
 LABEL author="Zbigniew Seifert"
 
 RUN apt-get update -y && \
-    apt-get install -y python3-pip python3-dev sqlite3 
+    apt-get install -y python3-pip sqlite3 
 
 COPY ./requirements.txt /app/requirements.txt
 
