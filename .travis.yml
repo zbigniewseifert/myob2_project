@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install: 
-  - docker build -t zseifert/vote_app myob2/.
+  - docker build -t zseifert/vote_app:travis myob2/.
   - docker run -d -p 8888:8888 --name testapp zseifert/vote_app 
   - docker ps -a
 
