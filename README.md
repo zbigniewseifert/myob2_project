@@ -26,7 +26,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 This is a simple picture upload and voting application.<br>
 Application accepts PNG or JPG files.<br>
@@ -89,12 +88,21 @@ $DOCKER_PASSWORD=
 3. Application is delivered with build in /health and /metadata endpoints
 
 ### Docker run command
+You can map any port availble on your host as long as it will be mapped to port 8888 in container.
+Example below is using port 8888 on both host and container.
+
 ```sh
 docker run -d -p 8888:8888 -v /local/db:/app/db -v /local/upload_files:/app/upload_files zseifert/vote_app:travis
 ```
 
+### Accessing application main page
+In your web browser type:<br>
+<hostname>:<port>
+
 ### Accesssing healthcheck
-/health enpoint return json object with sqlite db status and access to upload_files directory. <br>
+/health endpoint returns json object. <br>
+1. SQLite access test result
+2. upload_files access test
 
 ```sh
 curl www.example.com:8888/health
@@ -115,4 +123,3 @@ curl www.example.com:8888/health
 
 Project Link: [https://github.com/zbigniewseifert/myob2_project](https://github.com/zbigniewseifert/myob2_project)
 
-[product-screenshot]: vote_app.png
