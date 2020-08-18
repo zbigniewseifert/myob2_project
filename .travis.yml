@@ -9,4 +9,4 @@ before_install:
 
 
 script:
-   - docker exec -it testapp pytest 
+   - docker exec -it testapp pytest -v 
