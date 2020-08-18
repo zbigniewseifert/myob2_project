@@ -5,8 +5,14 @@ services:
 before_install: 
   - docker build -t zseifert/vote_app myob2/.
   - docker run -d -p 8888:8888 --name testapp zseifert/vote_app 
-  - docker ps 
+  - docker ps -a
 
 
 script:
    - docker exec -it testapp pytest -v 
+
+deploy:
+  provider: script
+  script: bash docker_push
+  on:
+    branch: master
