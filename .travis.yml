@@ -1,4 +1,10 @@
 language: python
-before_install: cd myob2;mkdir db upload_files;
+services:
+  - docker
+
+before_install: 
+  - docker build -t zseifert/vote_app myob2/.
+  - docker run -d -p 8888:8888 zseifert/vote_app test_application.py
+  - docker ps -a
 
 script: pytest
