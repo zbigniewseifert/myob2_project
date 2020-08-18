@@ -97,7 +97,9 @@ docker run -d -p 8888:8888 -v /local/db:/app/db -v /local/upload_files:/app/uplo
 
 ### Accessing application main page
 In your web browser type:<br>
+```sh
 <hostname>:<port>
+```
 
 ### Accesssing healthcheck
 /health endpoint returns json object. <br>
