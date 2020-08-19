@@ -128,7 +128,7 @@ def app_files(filename):
 
 @app.route('/metadata')
 def metadata_check():
-    return  jsonify(Tools.read_app_metadata())
+    return  jsonify(vote_app = Tools.read_app_metadata())
 
 
 
