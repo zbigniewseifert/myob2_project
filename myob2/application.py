@@ -13,6 +13,7 @@ app = Flask(__name__)
 app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.gif', '.jpeg']
 app.config['UPLOAD_PATH'] = 'upload_files'
 app.config['APP_FILES'] = 'app_files'
+app.config['MAX_CONTENT_LENGTH'] = 2 * 1024 * 1024
 
 health = HealthCheck(app, "/health")
 health.add_check(Tools.healthcheck_db)
