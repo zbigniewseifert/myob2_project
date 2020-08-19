@@ -1,4 +1,5 @@
 from models import FileDBModel
+import json
 import os
 import csv
 
@@ -95,9 +96,11 @@ class Tools:
             return False, "UploadDir Failed"
 
     def read_app_metadata():
-        metadata = []
-        with open('build_info.csv','r') as csvfile:
-            reader = csv.DictReader(csvfile)
-            for row in reader:
-                metadata.append(row)
+        #metadata = []
+        #with open('build_info.csv','r') as csvfile:
+        #    reader = csv.DictReader(csvfile)
+        #    for row in reader:
+        #        metadata.append(row)
+        with open('build_info.json','r') as j_file:
+            metadata = json.load(j_file)
         return metadata

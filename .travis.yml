@@ -3,6 +3,7 @@ services:
   - docker
 
 before_install: 
+  - update_json.py myob2/build_info.json "$TRAVIS_COMMIT"
   - docker build -t $DOCKER_USERNAME/vote_app:travis myob2/.
   - docker run -d -p 8888:8888 --name testapp zseifert/vote_app 
   - docker ps -a
