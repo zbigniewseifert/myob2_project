@@ -112,7 +112,6 @@ def upload_file():
             new_file_name = ''.join(random.choices(string.ascii_uppercase + string.digits, k=20))+file_ext
             if file_ext not in app.config['UPLOAD_EXTENSIONS']:
                 return render_template('upload.html')
-            #uploaded_file.save(os.path.join(app.config['UPLOAD_PATH'], uploaded_file.filename))
             uploaded_file.save(os.path.join(app.config['UPLOAD_PATH'], new_file_name))
             Tools.add_file_data(new_file_name,app.config['UPLOAD_PATH'],request.form['description'])
         return redirect(url_for('index'))
