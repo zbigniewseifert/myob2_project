@@ -89,16 +89,15 @@ class FileDBModel:
     def list_items(self, where_clause):
         query = f"SELECT id, Filename, Filepath, Description, CreatedOn, UserId, Votes " \
                 f"from {self.TABLENAME} WHERE _is_deleted != {1} " + where_clause
-        #print (query)
         result_set = self.conn.execute(query).fetchall()
         result = [{column: row[i]
                   for i, column in enumerate(result_set[0].keys())}
                   for row in result_set]
-        #print(result)
         return result
 
 
 class User:
+    #Not used as User specific features are not implemented at the moment
     TABLENAME = "User"
 
     def create(self, name, email):

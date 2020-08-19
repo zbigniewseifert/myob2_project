@@ -4,6 +4,7 @@ import os
 
 
 class FileDBService:
+    #Basic class wraping databse functions
     def __init__(self):
         self.model = FileDBModel()
 
@@ -21,8 +22,7 @@ class FileDBService:
         return response
 
 class Tools:
-    #def __init__(self):
-    #    self.dbservice = FileDBService()
+    #Class for application logic
 
     def add_file_data(filename,filepath,description):
         try:
@@ -86,7 +86,6 @@ class Tools:
 
     def healthcheck_uploads_dir():
         try:
-            #os.chdir('upload_files')
             f = open('upload_files/test.file','w')
             f.close()
             os.remove('upload_files/test.file')

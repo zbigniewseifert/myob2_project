@@ -36,6 +36,7 @@ def test_file_upload(client):
     assert b'Name:TestFile' in rv.data
 
 def test_file_vote(client):
+    #Checks voting mechanism
     data = {}
     rv = client.get('/')
     search_id = re.search(r'(Name:TestFile ID:)([\d]+)',rv.data.decode())
