@@ -1,10 +1,6 @@
-FROM ubuntu:latest
-
-#MAINTAINER Zbigniew Seifert "z.seifert@gmail.com"
-LABEL author="Zbigniew Seifert"
-
-RUN apt-get update -y && \
-    apt-get install -y python3-pip sqlite3 
+FROM alpine:latest
+RUN apk add --no-cache python3  bash && \
+apk --update add --virtual build-dependencies  py3-pip sqlite
 
 COPY ./requirements.txt /app/requirements.txt
 
